@@ -1,2 +1,2 @@
-# libkanji
-XC Compatible Kanji Functions Library
+# libj
+X68000 XC Library compatible jfctype/jstring functions.
