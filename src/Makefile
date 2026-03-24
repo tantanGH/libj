@@ -11,11 +11,12 @@ CC = m68k-xelf-gcc
 AR = m68k-xelf-ar
 
 # 出力アーカイブファイル名
-TARGET_FILE = ../libj.a
+TARGET_FILE = ../lib/libj.a
 
 # ヘッダ検索パス
 INCLUDE_FLAGS = -I${ELF2X68K_DIR}/lib/gcc/m68k-elf/13.4.0/include \
-				-I${ELF2X68K_DIR}/m68k-elf/include 
+				-I${ELF2X68K_DIR}/m68k-elf/include \
+				-I../include
 
 # コンパイルフラグ
 COMMON_FLAGS = -m68000 -O2 $(INCLUDE_FLAGS)
@@ -53,7 +54,7 @@ $(TARGET_FILE) : $(OBJS)
 	$(AR) -rs ${TARGET_FILE} $(OBJS) $(LIBS)
 
 # *.c ソースのコンパイル
-$(INTERMEDIATE_DIR)/%.o : %.c Makefile $(HEADER_SRCS)
+$(INTERMEDIATE_DIR)/%.o : %.c Makefile
 	mkdir -p $(INTERMEDIATE_DIR)
 	$(CC) $(CFLAGS) -c $*.c -o $(INTERMEDIATE_DIR)/$*.o
 
