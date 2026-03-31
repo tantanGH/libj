@@ -1,6 +1,6 @@
 # elf2x68k インストールパス
 ifndef ELF2X68K_DIR
-	ELF2X68K_DIR=/opt/homebrew/Cellar/elf2x68k/20260301
+	ELF2X68K_DIR=/opt/homebrew/Cellar/elf2x68k/20260331
 endif
 
 # デフォルトサフィックスを削除
